@@ -1,0 +1,152 @@
+@font-face {
+	font-family: "Poppins-Bold";
+	font-weight: 700;
+	src: url(../assets/fonts/Poppins/Poppins-Bold.ttf);
+}
+
+@font-face {
+	font-family: "Poppins-Regular";
+	font-weight: 400;
+	src: url(../assets/fonts/Poppins/Poppins-Regular.ttf);
+}
+
+@font-face {
+	font-family: "Jost-Regular";
+	font-weight: 400;
+	src: url(../assets/fonts/Jost/static/Jost-Regular.ttf);
+}
+
+@font-face {
+	font-family: "Jost-Bold";
+	font-weight: 700;
+	src: url(../assets/fonts/Jost/static/Jost-Bold.ttf);
+}
+
+html {
+	font-family: "Poppins-Regular", sans-serif;
+	font-weight: 400;
+	font-size: 24px;
+	line-height: 36px;
+}
+
+body {
+	width: 98vw;
+	height: 98vh;
+}
+
+a {
+	text-decoration: none;
+}
+
+img {
+	max-inline-size: 100%;
+	max-block-size: 100%
+}
+
+.header-container {
+	display: flex;
+	justify-content: space-around;
+	margin-top: 45px;
+}
+
+.menu-container {
+	width: 50%;
+}
+
+.menu {
+	display: flex;
+	justify-content: space-between;
+}
+
+.menu-item {
+	list-style-type: none;
+	font-weight: 400;
+	line-height: 45px;
+	color: #686565;
+	position: relative;
+}
+
+.logo {
+	font-family: "Poppins-Bold", sans-serif;
+	font-weight: 700;
+	font-size: 48px;
+	font-style: normal;
+	line-height: normal;
+	color:#0E0578;
+}
+
+.welcome-part-welcome-container {
+	
+}
+
+.welcome-part-subtitle {
+	color: #2000E7;
+	font-family: "Poppins-Regular", sans-serif;
+	font-size: 30px;
+	font-style: normal;
+	font-weight: 400;
+}
+
+.welcome-part-title {
+	color: #2000E7;
+	font-family: "Poppins-Bold", sans-serif;
+	font-size: 48px;
+	font-style: normal;
+	font-weight: 700;
+	}
+
+.welcome-part-highlight {
+	color: #F2BD00;
+}
+
+.welcome-part-text {
+	box-sizing: border-box;
+	width: 616px;
+	height: 72px;
+	color: #383838;
+	font-family: "Poppins-Regular", sans-serif;
+	font-size: 24px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 36px;
+	margin: 0px 0px 0px -1px;
+}
+
+.welcome-part-button {
+ 
+}
+
+.footer-contact-button {
+	
+}
+
+.welcome-part-button transparent-button {
+	
+}
+
+.welcome-part-image-container {
+	
+}
+
+.welcome-part-image {
+
+}
+
+.aboute {
+	background-color: #43BAFD0F;
+}
+
+.projects {
+	background-color: #FFD69633;
+}
+
+.contact {
+	background-color: #43BAFD0F;
+}
+
+.whitespace {
+	background-color: #fff;
+}
+.footer {
+	background-color: #FFD69633;
+}
