@@ -1,3 +1,4 @@
+
 @font-face {
 	font-family: "Poppins-Bold";
 	font-weight: 700;
@@ -49,6 +50,12 @@ img {
 	margin-top: 45px;
 }
 
+.header-nav {
+	width: 100%;
+	animation-duration: .2s;
+	animation-name: burger
+}
+
 .menu-container {
 	width: 50%;
 }
@@ -56,11 +63,12 @@ img {
 .menu {
 	display: flex;
 	justify-content: space-between;
+	list-style: none;
 }
 
 .menu-item {
-	list-style-type: none;
 	font-weight: 400;
+	font-size: clamp(25px,6vw,30px);
 	line-height: 45px;
 	color: #686565;
 	position: relative;
@@ -112,10 +120,38 @@ img {
 	margin: 0px 0px 0px -1px;
 }
 
-.welcome-part-button {
- 
+.welcome-part-button1 {
+ height: 72px;
+ width: 246px;
+ border-radius: 10px;
+ box-shadow: 11px 21px 15px 6px #00000040;
+ font-family: "Poppins-Regular", serif;
+ font-weight: 400;
+ font-size: 24px;
+ line-height: 36px;
 }
 
+.welcome-part-button2 {
+	height: 72px;
+	width: 246px;
+	border-radius: 10px;
+	box-shadow: 11px 21px 15px 6px #00000040;
+	font-family: "Poppins-Regular", serif;
+	font-weight: 400;
+	font-size: 24px;
+	line-height: 36px;
+ }
+
+.welcome-part-button1 {
+	background-color: #2000E7;
+	color: #fff;
+	border: none;
+}
+
+.welcome-part-button2 {
+	color: #2000E7;
+	border: 2px solid #2000E7;
+}
 .footer-contact-button {
 	
 }
@@ -132,12 +168,80 @@ img {
 
 }
 
+
+
 .aboute {
 	background-color: #43BAFD0F;
 }
 
 .projects {
 	background-color: #FFD69633;
+}
+
+
+.container project-container {
+	padding: 35px 108px;
+}
+
+.project-title {
+	font-size: clamp(30px,6vw,48px);
+	line-height: clamp(50px,7vw,72px);
+	letter-spacing: 0.2em;
+	text-align: center;
+}
+
+.project-text {
+	text-align: center;
+}
+
+.project-list {
+	margin-top: 45px;
+	margin-bottom: 30px;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
+	row-gap: clamp(23px,6vw,46px);
+	column-gap: clamp(60px,5vw,186px);
+}
+
+.project-list-item {
+	justify-self: center;
+}
+
+.project-lightbox {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,.4);
+	transition: .4s;
+	display: grid;
+	place-content: center;
+	visibility: hidden;
+	opacity: 0;
+}
+
+.project-lightbox-image {
+	height: 30vw;
+}
+.project-lightbox-left,.project-lightbox-right {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	position: relative;
+	width: 3vw;
+	height: 7vw;
+	font-size: 10vw;
+	color: #fff;
+}
+
+.project-lightbox-left {
+	bottom: -18vw;
+}
+
+.project-lightbox-right {
+	right: -38vw;
+	top: -19vw;
 }
 
 .contact {
@@ -150,3 +254,146 @@ img {
 .footer {
 	background-color: #FFD69633;
 }
+.form-input,.form-area,.form-button {
+	margin-top: clamp(41px,12vw,81px);
+	background: #fff;
+	box-shadow: 13px 21px 4px rgba(0,0,0,.25);
+	color: #383838;
+	font-size: clamp(16px,5vw,32px);
+	font-weight: 400;
+	line-height: 48px;
+}
+
+.form-input,.form-area {
+	padding: 30px 55px;
+}
+
+.form-area {
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+.form-button {
+	margin-top: 50px;
+	justify-self: center;
+	height: clamp(50px,7vw,94px);
+	width: clamp(200px,24vw,327px);
+	cursor: pointer;
+	text-align: center;
+}
+
+.footer-container {
+	padding: 200px 50px 0 1%;
+	display: grid;
+	grid-template-columns: 1fr 3fr;
+	grid-template-areas: "contact content" "social social";
+	gap: clamp(30px,4vw,110px);
+}
+
+.footer-contact {
+	grid-area: contact;
+}
+
+.footer-contact-title {
+	font-weight: 700;
+	font-size: clamp(24px,7vw,48px);
+	line-height: 72px;
+	letter-spacing: .35em;
+	color: #0e0578;
+}
+
+.footer-contact-block {
+	width: clamp(290px,5vw,340px);
+	margin-top: 75px;
+	display: flex;
+	position: relative
+}
+
+.footer-contact-input,.footer-contact-button {
+	border-radius: 30px;
+	font-family: "Jost";
+	font-style: normal;
+	font-weight: 700;
+	font-size: clamp(16px,3vw,31px);
+	line-height: 45px;
+	color: #fff;
+}
+
+.footer-contact-input {
+	padding: 25px 40% 25px 30px;
+	width: clamp(160px,100%,320px);
+	background: #383838;
+}
+
+.footer-contact-button {
+	cursor: pointer;
+	position: absolute;
+	right: -17%;
+	background: #f965fc;
+	padding: 25px 15px;
+	width: clamp(90px,60%,180px);
+	text-align: center;
+}
+
+.footer-content {
+	display: grid;
+	grid-template-columns: 1fr 1fr 275px;
+	gap: clamp(15px,4vw,100px);
+	grid-area: content;
+	font-size: clamp(16px,3vw,31px);
+	line-height: 45px;
+	color: #383838;
+}
+
+.footer-content-heading,.footer-content-list-item {
+	font-family: "Jost",sans-serif;
+	font-style: normal;
+}
+
+.footer-content-heading {
+	font-weight: 700;
+}
+
+.footer-list {
+	margin-top: clamp(15px,3vw,35px);
+	display: grid;
+	grid-template-columns: 1fr;
+	row-gap: clamp(15px,3vw,35px);
+}
+
+.footer-list-item {
+	font-weight: 400;
+}
+
+.footer-social {
+	padding: 50px;
+	grid-area: social;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 20px;
+}
+
+.footer__social-text {
+	text-align: center;
+	font-family: "Jost";
+	font-style: normal;
+	font-weight: 400;
+	font-size: clamp(16px,3vw,32px);
+	line-height: 46px;
+	color: #383838;
+}
+
+.footer-social-list {
+	flex-basis: clamp(200px,29vw,400px);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.footer-social-item {
+	transition-duration: .4s;
+	transition-delay: .2s;
+}
+
