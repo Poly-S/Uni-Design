@@ -23,6 +23,15 @@
 	src: url(../assets/fonts/Jost/static/Jost-Bold.ttf);
 }
 
+*,*::beforme,*::after {
+	box-sizing: border-box;
+}
+
+a,button {
+	cursor: revert;
+	text-decoration: none;
+}
+
 html {
 	font-family: "Poppins-Regular", sans-serif;
 	font-weight: 400;
@@ -35,13 +44,89 @@ body {
 	height: 98vh;
 }
 
-a {
-	text-decoration: none;
-}
-
 img {
 	max-inline-size: 100%;
-	max-block-size: 100%
+	max-block-size: 100%;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+input,textarea {
+	-webkit-user-select: auto;
+}
+
+textarea {
+	white-space: revert;
+}
+
+meter {
+	-webkit-appearance: revert;
+	appearance: revert;
+}
+
+:where(pre) {
+	all: revert;
+}
+
+::placeholder {
+	color: unset;
+}
+
+::marker {
+	content: initial;
+}
+
+:where([hidden]) {
+	display: none;
+}
+
+:where([contenteditable]:not([contenteditable=false])) {
+	-moz-user-modify: read-write;
+	-webkit-user-modify: read-write;
+	overflow-wrap: break-word;
+	-webkit-line-break: after-white-space;
+	-webkit-user-select: auto;
+}
+
+:where([draggable=true]) {
+	-webkit-user-drag: element;
+}
+
+:where(dialog:modal) {
+	all: revert;
+}
+
+.aboute-button,.welcome-part-button  {
+	width: clamp(150px,15vw,246px);
+	height: clamp(50px,12vw,72px);
+	cursor: pointer;
+	border: 2px solid #2000e7;
+	box-shadow: 11px 21px 15px 6px rgba(0,0,0,.25);
+	border-radius: 10px;
+	text-align: center;
+	font-weight: 400;
+	font-size: clamp(16px,4vw,24px);
+	line-height: 36px;
+	color: #2000e7;
+}
+
+.about-button:focus,.welcome-part-button:focus,.about-button:hover,.welcome-part-button:hover {
+	background: #2000e7;
+	color: #fff;
+}
+
+.contact-title,.project-title,.about-title,.welcome-part-title {
+	font-weight: 700;
+	color: #2000e7;
+}
+
+.contact-text,.project-text,.about-text,.welcome-part-text {
+	font-weight: 400;
+	font-size: clamp(16px,3vw,24px);
+	line-height: 36px;
+	color: #383838;
 }
 
 .header-container {
@@ -50,28 +135,49 @@ img {
 	margin-top: 45px;
 }
 
-.header-nav {
-	width: 100%;
-	animation-duration: .2s;
-	animation-name: burger
+.container {
+	max-width: 1440px;
+	margin: 0 auto;
 }
 
-.menu-container {
-	width: 50%;
+.form {
+	display: grid;
+	grid-template-columns: minmax(100%, 50%);
 }
 
-.menu {
-	display: flex;
-	justify-content: space-between;
-	list-style: none;
-}
-
-.menu-item {
+.form-input,.form-area,.form-button {
+	margin-top: clamp(41px,12vw,81px);
+	background: #fff;
+	box-shadow: 13px 21px 4px rgba(0,0,0,.25);
+	color: #383838;
+	font-size: clamp(16px,5vw,32px);
 	font-weight: 400;
-	font-size: clamp(25px,6vw,30px);
-	line-height: 45px;
-	color: #686565;
-	position: relative;
+	line-height: 48px;
+}
+
+.form-input,.form-area {
+	padding: 30px 55px;
+}
+
+.form-area {
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+.form-button {
+	margin-top: 50px;
+	justify-self: center;
+	height: clamp(50px,7vw,94px);
+	width: clamp(200px,24vw,327px);
+	cursor: pointer;
+	text-align: center;
+	transition: 1s;
+}
+
+.form-button:hover,.form-button:focus {
+	background-color: rgba(0,0,0,.25);
+	color: #fff;
+	box-shadow: 13px 21px 4px rgba(0,0,0,.75);
 }
 
 .logo {
@@ -83,103 +189,107 @@ img {
 	color:#0E0578;
 }
 
+.menu-item {
+	font-family: "Poppins-Regular", sans-serif;
+	list-style-type: none;
+	font-weight: 400;
+	line-height: 45px;
+	color: #686565;
+	position: relative;
+}
+
+.header-container {
+  padding: 2vw;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  place-items: center center;
+}
+
+.header-nav {
+	display: none;
+	width: clamp(150px,35vw,210px);
+	height: 235px;
+	background-color: #ebe9fd;
+	border-radius: 0px 0px 0px 191px;
+	border: 1px solid #0e0578;
+	overflow: hidden;
+	position: absolute;
+	z-index: 1;
+	top: 100%;
+	right: 0;
+}
+
+.menu {
+	position: absolute;
+	top: 0;
+	right: 5%;
+	flex-direction: column;
+	display: flex;
+	justify-content: space-between;
+}
+
 .welcome-part-welcome-container {
-	
+	padding: 190px 80px;
+	display: grid;
+	grid-template-columns: 40% 1fr;
+	gap: clamp(40px,4vw,80px);
 }
 
 .welcome-part-subtitle {
-	color: #2000E7;
-	font-family: "Poppins-Regular", sans-serif;
-	font-size: 30px;
-	font-style: normal;
 	font-weight: 400;
+	font-size: clamp(20px,4vw,30px);
+	line-height: 45px;
+	color: #2000e7;
 }
 
 .welcome-part-title {
-	color: #2000E7;
-	font-family: "Poppins-Bold", sans-serif;
-	font-size: 48px;
-	font-style: normal;
-	font-weight: 700;
-	}
+	margin-top: 5px;
+	font-size: clamp(30px,6vw,48px);
+	line-height: clamp(50px,7vw,72px);
+	letter-spacing: 0em;
+}
 
 .welcome-part-highlight {
-	color: #F2BD00;
+	color: #e0ad17;
 }
 
 .welcome-part-text {
-	box-sizing: border-box;
-	width: 616px;
-	height: 72px;
-	color: #383838;
-	font-family: "Poppins-Regular", sans-serif;
-	font-size: 24px;
-	font-style: normal;
-	font-weight: 400;
-	line-height: 36px;
-	margin: 0px 0px 0px -1px;
+	margin-top: 20px;
 }
 
-.welcome-part-button1 {
- height: 72px;
- width: 246px;
- border-radius: 10px;
- box-shadow: 11px 21px 15px 6px #00000040;
- font-family: "Poppins-Regular", serif;
- font-weight: 400;
- font-size: 24px;
- line-height: 36px;
+.welcome-part-button {
+	margin-top: 90px;
+	display: flex;
+	justify-content: space-between;
 }
 
-.welcome-part-button2 {
-	height: 72px;
-	width: 246px;
-	border-radius: 10px;
-	box-shadow: 11px 21px 15px 6px #00000040;
-	font-family: "Poppins-Regular", serif;
-	font-weight: 400;
-	font-size: 24px;
-	line-height: 36px;
- }
-
-.welcome-part-button1 {
-	background-color: #2000E7;
-	color: #fff;
-	border: none;
+.about-container {
+	padding: 206px 46px;
+	background: url("../assets/images/1 1.svg") no-repeat right bottom/65%;
+	display: grid;
+	grid-template-columns: 415px;
 }
 
-.welcome-part-button2 {
-	color: #2000E7;
-	border: 2px solid #2000E7;
-}
-.footer-contact-button {
-	
+.about-title {
+	font-size: clamp(30px,6vw,48px);
+	line-height: clamp(50px,7vw,72px);
+	letter-spacing: 0.35em;
 }
 
-.welcome-part-button transparent-button {
-	
+.about-text {
+	margin-top: 30px;
 }
 
-.welcome-part-image-container {
-	
+.about-button {
+	margin-top: 30px;
+	margin-left: 30px;
 }
 
-.welcome-part-image {
-
+.project-block {
+	height: clamp(150px,20vw,300px);
 }
 
-
-
-.aboute {
-	background-color: #43BAFD0F;
-}
-
-.projects {
-	background-color: #FFD69633;
-}
-
-
-.container project-container {
+.project-container {
 	padding: 35px 108px;
 }
 
@@ -223,6 +333,7 @@ img {
 .project-lightbox-image {
 	height: 30vw;
 }
+
 .project-lightbox-left,.project-lightbox-right {
 	display: flex;
 	justify-content: center;
@@ -244,42 +355,38 @@ img {
 	top: -19vw;
 }
 
-.contact {
-	background-color: #43BAFD0F;
+.contact-block {
+	height: clamp(120px,20vw,270px);
 }
 
-.whitespace {
-	background-color: #fff;
-}
-.footer {
-	background-color: #FFD69633;
-}
-.form-input,.form-area,.form-button {
-	margin-top: clamp(41px,12vw,81px);
-	background: #fff;
-	box-shadow: 13px 21px 4px rgba(0,0,0,.25);
-	color: #383838;
-	font-size: clamp(16px,5vw,32px);
-	font-weight: 400;
-	line-height: 48px;
+.container contact-container {
+	padding: 67px 0 190px 0;
 }
 
-.form-input,.form-area {
-	padding: 30px 55px;
-}
-
-.form-area {
-	white-space: pre-wrap;
-	overflow-wrap: break-word;
-}
-
-.form-button {
-	margin-top: 50px;
-	justify-self: center;
-	height: clamp(50px,7vw,94px);
-	width: clamp(200px,24vw,327px);
-	cursor: pointer;
+.contact-title {
+	margin-top: 67px;
+	font-size: clamp(30px,6vw,48px);
+	line-height: clamp(50px,7vw,72px);
+	letter-spacing: 0.2em;
 	text-align: center;
+}
+
+.contact-text {
+	margin-top: 10px;
+	text-align: center;
+}
+
+.contact-content {
+	margin-top: 160px;
+	padding-left: 66px;
+	display: grid;
+	grid-template-columns: 50% 50%;
+	background: url("../assets/images/Saly-13.png") no-repeat right center/55%;
+}
+
+
+.footer-block {
+	height: clamp(58px,20vw,208px);
 }
 
 .footer-container {
@@ -291,7 +398,7 @@ img {
 }
 
 .footer-contact {
-	grid-area: contact;
+	grid-area: auto;
 }
 
 .footer-contact-title {
@@ -306,7 +413,7 @@ img {
 	width: clamp(290px,5vw,340px);
 	margin-top: 75px;
 	display: flex;
-	position: relative
+	position: relative;
 }
 
 .footer-contact-input,.footer-contact-button {
@@ -345,7 +452,7 @@ img {
 	color: #383838;
 }
 
-.footer-content-heading,.footer-content-list-item {
+.footer-content-heading,.footer-conten-list-item {
 	font-family: "Jost",sans-serif;
 	font-style: normal;
 }
@@ -375,7 +482,7 @@ img {
 	gap: 20px;
 }
 
-.footer__social-text {
+.footer-social-text {
 	text-align: center;
 	font-family: "Jost";
 	font-style: normal;
@@ -397,3 +504,26 @@ img {
 	transition-delay: .2s;
 }
 
+.footer-social-item:hover {
+	transform: scale(1.2) translate(-10%, -10%);
+}
+
+.aboute {
+	background-color: #43BAFD0F;
+}
+
+.projects {
+	background-color: #FFD69633;
+}
+
+.contact {
+	background-color: #43BAFD0F;
+}
+
+.whitespace {
+	background-color: #fff;
+}
+
+.footer {
+	background-color: #FFD69633;
+}
